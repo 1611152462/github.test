@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <io.vov.vitamio.widget.CenterLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#000000"
+        >
+        <SurfaceView
+            android:id="@+id/custom_videoview_surface"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            />
+    </io.vov.vitamio.widget.CenterLayout>
+    <RelativeLayout
+        android:id="@+id/custom_videoview_prolayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#000000"
+        android:visibility="gone" >
+
+        <ProgressBar
+            style="@android:style/Widget.ProgressBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/custom_videoview_contrlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#44000000"
+            android:padding="10dp" >
+
+            <ImageView
+                android:id="@+id/custom_videoview_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/small_play" />
+
+            <SeekBar
+                android:id="@+id/custom_videoview_seekbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="15dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/custom_videoview_fullscreen"
+                android:layout_toRightOf="@+id/custom_videoview_play"
+                android:maxHeight="5dp"
+                android:minHeight="5dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:thumb="@drawable/yuandian"
+                android:thumbOffset="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00/00:00"
+                android:textColor="#FFF"
+               android:textSize="12dp"
+                android:id="@+id/custom_videoview_time"
+                android:layout_alignRight="@id/custom_videoview_seekbar"
+                android:layout_below="@id/custom_videoview_seekbar"
+                android:layout_marginTop="5dp"
+                />
+
+            <ImageView
+                android:id="@+id/custom_videoview_reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:layout_toLeftOf="@id/custom_videoview_play"
+
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/custom_videoview_stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/custom_videoview_play"
+                android:src="@drawable/stop"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/custom_videoview_fullscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/fullsc" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_above="@id/custom_videoview_contrlayout"
+        android:id="@+id/custom_videoview_errorlayout"
+        android:background="#000000"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ImageView
+            android:id="@+id/custom_videoview_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/play" />
+    </RelativeLayout>
+</RelativeLayout>
